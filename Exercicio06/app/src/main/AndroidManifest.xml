@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.targettrust.exercicio05" >
+    package="br.com.targettrust.exercicio06" >
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Exercicio05Theme" >
+        android:theme="@style/Exercicio06Theme" >
         <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -15,6 +15,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".TransitionActivity1"
+            android:theme="@style/Exercicio06Theme.Red" />
+        <activity
+            android:name=".TransitionActivity2"
+            android:theme="@style/Exercicio06Theme.Red" />
+        <activity
+            android:name=".TransitionActivity3"
+            android:theme="@style/Exercicio06Theme.Red" />
+        <activity
+            android:name=".SharedElementActivity"
+            android:theme="@style/Exercicio06Theme.Blue" />
+
+        <activity
+            android:name=".AnimationsActivity1"
+            android:theme="@style/Exercicio06Theme.Green" />
+
+        <activity
+            android:name=".AnimationsActivity2"
+            android:theme="@style/Exercicio06Theme.Green" />
+
+        <activity
+            android:name=".RevealActivity"
+            android:theme="@style/Exercicio06Theme.Yellow" />
     </application>
 
 </manifest>

@@ -1,15 +1,105 @@
 <resources>
 
-    <style name="Exercicio05Theme" parent="Exercicio05Theme.Base">
- 
+    <style name="Exercicio06Theme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/material_animations_primary</item>
+        <item name="android:colorPrimaryDark">@color/material_animations_primary_dark</item>
+        <item name="android:colorAccent">@color/material_animations_accent</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:textColorPrimaryInverse">@color/text_light</item>
+        <item name="android:statusBarColor">@color/material_animations_primary_dark</item>
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">false</item>
+        <item name="android:windowAllowReturnTransitionOverlap">false</item>
+        <item name="android:titleTextAppearance">@style/Exercicio06Theme.TextAppearance.Title
+        </item>
+        <item name="android:windowBackground">@color/light_grey</item>
     </style>
- 
-    <style name="Exercicio05Theme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+
+    <style name="Exercicio06Theme.Red" parent="Exercicio06Theme">
+        <item name="android:colorPrimary">@color/theme_red_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_red_primary</item>
+        <item name="android:textColorPrimary">@color/theme_red_text</item>
+        <item name="android:statusBarColor">@color/theme_red_primary_dark</item>
+        <item name="android:windowBackground">@color/theme_red_background</item>
+        <item name="android:colorAccent">@color/theme_red_accent</item>
+    </style>
+
+    <style name="Exercicio06Theme.Blue" parent="Exercicio06Theme">
+        <item name="android:colorPrimary">@color/theme_blue_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_blue_primary_dark</item>
+        <item name="android:textColorPrimary">@color/theme_blue_text</item>
+        <item name="android:textColorPrimaryInverse">@color/theme_blue_text_inverse</item>
+        <item name="android:statusBarColor">@color/theme_blue_primary_dark</item>
+        <item name="android:windowBackground">@color/theme_blue_background</item>
+        <item name="android:colorAccent">@color/theme_blue_accent</item>
+    </style>
+
+    <style name="Exercicio06Theme.Green" parent="Exercicio06Theme">
+        <item name="android:colorPrimary">@color/theme_green_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_green_primary</item>
+        <item name="android:textColorPrimary">@color/theme_green_text</item>
+        <item name="android:statusBarColor">@color/theme_green_primary_dark</item>
+        <item name="android:windowBackground">@color/theme_green_background</item>
+        <item name="android:colorAccent">@color/theme_green_accent</item>
+    </style>
+
+    <style name="Exercicio06Theme.Yellow" parent="Exercicio06Theme">
+        <item name="android:colorPrimary">@color/theme_yellow_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_yellow_primary</item>
+        <item name="android:textColorPrimary">@color/theme_yellow_text</item>
+        <item name="android:statusBarColor">@color/theme_yellow_primary_dark</item>
+        <item name="android:windowBackground">@color/theme_yellow_background</item>
+        <item name="android:colorAccent">@color/theme_yellow_accent</item>
+    </style>
+
+    <style name="Exercicio06Theme.Text.Body" parent="Base.TextAppearance.AppCompat.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/spacing_normal</item>
+        <item name="android:padding">@dimen/spacing_normal</item>
+    </style>
+
+    <style name="Exercicio06Theme.Text.Section" parent="Base.TextAppearance.AppCompat.Caption">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Exercicio06Theme.Icon">
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="Exercicio06Theme.Icon.Big">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">150dp</item>
+    </style>
+
+    <style name="Exercicio06Theme.Icon.Medium">
+        <item name="android:layout_width">84dp</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:layout_height">84dp</item>
+    </style>
+
+    <style name="Exercicio06Theme.Icon.Medium.Scaled" parent="Exercicio06Theme.Icon.Medium">
+        <item name="android:alpha">0</item>
+        <item name="android:scaleX">0.5</item>
+        <item name="android:scaleY">0.5</item>
+    </style>
+
+    <style name="Exercicio06Theme.Icon.Small">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+    </style>
+
+    <style name="Exercicio06Theme.Button" parent="Base.Widget.AppCompat.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/spacing_normal</item>
+    </style>
+
+    <style name="Exercicio06Theme.Button.Scaled" parent="Exercicio06Theme.Button">
+        <item name="android:scaleX">0</item>
+        <item name="android:scaleY">0</item>
     </style>
 
 </resources>
