@@ -25,4 +25,5 @@
     <string name="err_msg_name">Informe seu nome completo</string>
     <string name="err_msg_email">Informe um email válido.</string>
     <string name="err_msg_password">Informe uma senha</string>
+    <string name="btn_sign_up">Registrar</string>
 </resources>

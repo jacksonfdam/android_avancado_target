@@ -12,9 +12,4 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <declare-styleable name="FAB">
-        <!-- Background color -->
-        <attr name="bg_color" format="color|reference"/>
-        <attr name="bg_color_pressed" format="color|reference"/>
-    </declare-styleable>
 </resources>
