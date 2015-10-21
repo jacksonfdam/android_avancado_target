@@ -1,4 +1,4 @@
-package br.com.targettrust.Exercicio02;
+package br.com.targettrust.exercicio02;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

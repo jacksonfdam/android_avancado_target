@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.targettrust.Exercicio02" >
+    package="br.com.targettrust.exercicio02" >
 
     <application
         android:allowBackup="true"
