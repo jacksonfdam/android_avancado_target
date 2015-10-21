@@ -1,5 +1,7 @@
 package br.com.targettrust.exercicio07;
-public class ItemDetail {
+
+
+class ItemDetail {
 
     private int id;
     private String descr;

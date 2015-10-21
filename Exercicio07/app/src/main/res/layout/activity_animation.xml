@@ -9,7 +9,7 @@
         android:layout_marginRight='44dp'
         android:layout_marginTop='54dp'
         android:layout_centerInParent='true'
-        android:src='@drawable/freelancer2' />
+        android:src='@mipmap/ic_logo' />
 
     <ListView android:id="@+id/listView"
         android:layout_width="wrap_content"
