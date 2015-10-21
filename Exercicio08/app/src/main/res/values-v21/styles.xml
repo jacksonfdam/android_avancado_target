@@ -1,5 +1,5 @@
 <resources>
-    <style name="Exercicio07Theme" parent="Exercicio07Theme.Base">
+    <style name="Exercicio08Theme" parent="Exercicio08Theme.Base">
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="android:windowAllowReturnTransitionOverlap">true</item>

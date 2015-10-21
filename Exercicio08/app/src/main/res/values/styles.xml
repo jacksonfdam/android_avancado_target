@@ -1,10 +1,10 @@
 <resources>
 
-    <style name="Exercicio07Theme" parent="Exercicio07Theme.Base">
+    <style name="Exercicio08Theme" parent="Exercicio08Theme.Base">
  
     </style>
  
-    <style name="Exercicio07Theme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Exercicio08Theme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>

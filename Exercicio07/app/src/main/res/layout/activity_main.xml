@@ -14,6 +14,36 @@
             android:id="@+id/toolbar"
             layout="@layout/toolbar" />
     </LinearLayout>
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="S/A"
+        tools:context=".MainActivity" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:onClick='fadeAnimation'
+            android:text='@string/btFadeAnimation' />
+        <Button
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:onClick='scaleupAnimation'
+            android:text='@string/btScaleupAni' />
+        <Button
+            android:layout_width='match_parent'
+            android:layout_height='wrap_content'
+            android:onClick='thumbNailScaleAnimation'
+            android:text='@string/btThumbNailScaleupAni' />
+
+    </LinearLayout>
 
 
 </RelativeLayout>
