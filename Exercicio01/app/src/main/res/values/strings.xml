@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Exercicio01</string>
+	<string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Abrir</string>
+    <string name="drawer_close">Fechar</string>
+ 
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_friends">Amigos</string>
+    <string name="nav_item_notifications">Mensagens</string>
+ 
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_friends</item>
+        <item>@string/nav_item_notifications</item>
+    </string-array>
+ 
+    <string name="title_messages">Mensagens</string>
+    <string name="title_friends">Amigos</string>
+    <string name="title_home">Home</string>
+</resources>
