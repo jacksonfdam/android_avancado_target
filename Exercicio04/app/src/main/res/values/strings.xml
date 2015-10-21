@@ -19,4 +19,10 @@
     <string name="title_messages">Mensagens</string>
     <string name="title_friends">Amigos</string>
     <string name="title_home">Home</string>
+    <string name="hint_email">Seu email</string>
+    <string name="hint_password">Sua senha</string>
+    <string name="hint_name">Seu nome</string>
+    <string name="err_msg_name">Informe seu nome completo</string>
+    <string name="err_msg_email">Informe um email válido.</string>
+    <string name="err_msg_password">Informe uma senha</string>
 </resources>
