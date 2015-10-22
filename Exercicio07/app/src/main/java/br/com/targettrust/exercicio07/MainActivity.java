@@ -11,6 +11,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,15 +46,10 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
 
     public void startMeUpAnimation(View view) {
         final TextView tv = (TextView) findViewById(R.id.logo);
-        Animation anim = AnimationUtils.loadAnimation(this, R.anim.rotate_anim);
+        //Animation anim = AnimationUtils.loadAnimation(this, R.anim.rotate_anim);
         //Animation anim = AnimationUtils.loadAnimation(this, R.anim.move_to_right_anim);
         //Animation anim = AnimationUtils.loadAnimation(this, R.anim.fall_bounce_anim);
         final Animation anim = AnimationUtils.loadAnimation(this, R.anim.rotate_anim);
@@ -118,5 +116,4 @@ public class MainActivity extends AppCompatActivity {
                 opts.toBundle());
     }
 
-}
 }

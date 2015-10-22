@@ -20,7 +20,7 @@
 
         <ImageView
             android:id="@+id/sample_icon"
-            style="@style/MaterialAnimations.Icon.Small"
+            style="@style/Exercicio06Theme.Icon.Small"
             android:src="@drawable/circle_24dp"
             app:colorTint="@{sample.color}" />
 

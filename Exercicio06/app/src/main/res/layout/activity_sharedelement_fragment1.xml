@@ -6,7 +6,7 @@
 
     <ImageView
         android:id="@+id/square_blue"
-        style="@style/MaterialAnimations.Icon.Big"
+        style="@style/Exercicio06Theme.Icon.Big"
         android:src="@drawable/circle_24dp"
         android:transitionName="@string/square_blue_name" />
 
@@ -17,18 +17,18 @@
         android:text="Fragment 1" />
 
     <TextView
-        style="@style/MaterialAnimations.Text.Body"
+        style="@style/Exercicio06Theme.Text.Body"
         android:text="Blue circle is a shared element between MainActivity and this fragment." />
 
 
     <Button
         android:id="@+id/sample2_button1"
         android:text="Next (Overlap transition = false)"
-        style="@style/MaterialAnimations.Button" />
+        style="@style/Exercicio06Theme.Button" />
 
     <Button
         android:id="@+id/sample2_button2"
         android:text="Next (Overlap transition =  true)"
-        style="@style/MaterialAnimations.Button" />
+        style="@style/Exercicio06Theme.Button" />
 
 </LinearLayout>

@@ -6,7 +6,7 @@
 
     <TextView
         android:id="@+id/scene0_title"
-        style="@style/MaterialAnimations.Text.Body"
+        style="@style/Exercicio06Theme.Text.Body"
         android:text="Scenes store the state of a view hierarchy, including all its views and their property values. The transitions framework can run animations between a starting and an ending scene" />
 
 </LinearLayout>

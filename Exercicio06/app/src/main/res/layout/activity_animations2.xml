@@ -16,7 +16,7 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            style="@style/MaterialAnimations.TextAppearance.Title"
+            style="@style/Exercicio06Theme.TextAppearance.Title"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
             android:background="?android:colorPrimary"
@@ -24,7 +24,7 @@
 
             <TextView
                 android:id="@+id/title"
-                style="@style/MaterialAnimations.TextAppearance.Title.Inverse"
+                style="@style/Exercicio06Theme.TextAppearance.Title.Inverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|start"
@@ -49,13 +49,13 @@
 
                 <Button
                     android:id="@+id/sample3_button1"
-                    style="@style/MaterialAnimations.Button.Scaled"
+                    style="@style/Exercicio06Theme.Button.Scaled"
                     android:layout_weight="1"
                     android:text="Scene one" />
 
                 <Button
                     android:id="@+id/sample3_button2"
-                    style="@style/MaterialAnimations.Button.Scaled"
+                    style="@style/Exercicio06Theme.Button.Scaled"
                     android:layout_weight="1"
                     android:text="Scene two" />
             </LinearLayout>
@@ -66,13 +66,13 @@
 
                 <Button
                     android:id="@+id/sample3_button3"
-                    style="@style/MaterialAnimations.Button.Scaled"
+                    style="@style/Exercicio06Theme.Button.Scaled"
                     android:layout_weight="1"
                     android:text="Scene three" />
 
                 <Button
                     android:id="@+id/sample3_button4"
-                    style="@style/MaterialAnimations.Button.Scaled"
+                    style="@style/Exercicio06Theme.Button.Scaled"
                     android:layout_weight="1"
                     android:text="Scene four" />
             </LinearLayout>

@@ -7,7 +7,7 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        style="@style/MaterialAnimations.TextAppearance.Title"
+        style="@style/Exercicio06Theme.TextAppearance.Title"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:background="@color/material_animations_primary"
@@ -15,7 +15,7 @@
 
         <TextView
             android:id="@+id/title"
-            style="@style/MaterialAnimations.TextAppearance.Title.Inverse"
+            style="@style/Exercicio06Theme.TextAppearance.Title.Inverse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|start"

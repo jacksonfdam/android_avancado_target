@@ -27,7 +27,7 @@ public class AnimationActivity extends Activity {
         List<ItemDetail> itemList = this.createItems(50);
 
         // Load animation
-        final Animation anim = AnimationUtils.loadAnimation(this, R.anim.fade_anim);
+        final Animation anim = AnimationUtils.loadAnimation(this, R.anim.fade_in);
 
         aAdp = new ArrayAdapter<ItemDetail>(this, android.R.layout.simple_list_item_1, itemList);
         lv.setAdapter(aAdp);
@@ -70,6 +70,7 @@ public class AnimationActivity extends Activity {
     private AbsListView.OnScrollListener scrollListener = new AbsListView.OnScrollListener() {
         boolean isScrolling = false;
         boolean isLoading = false;
+
         @Override
         public void onScrollStateChanged(AbsListView view, int scrollState) {
             if (scrollState != 0)
@@ -83,7 +84,7 @@ public class AnimationActivity extends Activity {
         @Override
         public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
             int lastInScreen = firstVisibleItem + visibleItemCount;
-            if(lastInScreen == totalItemCount && !isLoading){
+            if (lastInScreen == totalItemCount && !isLoading) {
                 //loadMoreItems(totalItemCount - 1);
                 isLoading = true;
             }
@@ -93,13 +94,11 @@ public class AnimationActivity extends Activity {
 
     private List<ItemDetail> createItems(int size) {
         List<ItemDetail> result = new ArrayList<ItemDetail>();
-        for (int i=0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             ItemDetail item = new ItemDetail(i, "Item " + i);
             result.add(item);
         }
 
         return result;
     }
-
-
 }

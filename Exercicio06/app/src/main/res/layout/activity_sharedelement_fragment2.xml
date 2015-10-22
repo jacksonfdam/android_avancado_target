@@ -6,7 +6,7 @@
 
     <ImageView
         android:id="@+id/square_blue"
-        style="@style/MaterialAnimations.Icon.Small"
+        style="@style/Exercicio06Theme.Icon.Small"
         android:src="@drawable/circle_24dp"
         android:transitionName="@string/square_blue_name" />
 
@@ -24,20 +24,20 @@
 
     <TextView
         android:id="@+id/fragment2_body1"
-        style="@style/MaterialAnimations.Text.Body"
+        style="@style/Exercicio06Theme.Text.Body"
         android:layout_below="@+id/square_blue"
         android:layout_centerHorizontal="true"
         android:text="Blue circle is a shared element between two fragments" />
 
     <TextView
         android:id="@+id/fragment2_title"
-        style="@style/MaterialAnimations.Text.Body"
+        style="@style/Exercicio06Theme.Text.Body"
         android:textStyle="bold"
         android:layout_below="@+id/fragment2_body1"
         android:text="Overlap" />
 
     <TextView
-        style="@style/MaterialAnimations.Text.Body"
+        style="@style/Exercicio06Theme.Text.Body"
         android:layout_below="@+id/fragment2_title"
         android:layout_centerHorizontal="true"
         android:text="When true, the enter transition will start as soon as possible. When false, the enter transition will wait until the exit transition completes before starting." />

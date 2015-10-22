@@ -16,7 +16,7 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            style="@style/MaterialAnimations.TextAppearance.Title"
+            style="@style/Exercicio06Theme.TextAppearance.Title"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
             android:background="?android:colorPrimary"
@@ -28,7 +28,7 @@
 
                 <ImageView
                     android:id="@+id/shared_target"
-                    style="@style/MaterialAnimations.Icon.Small"
+                    style="@style/Exercicio06Theme.Icon.Small"
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/circle_24dp"
                     android:transitionName="@string/transition_reveal1"
@@ -36,7 +36,7 @@
 
                 <TextView
                     android:id="@+id/title"
-                    style="@style/MaterialAnimations.TextAppearance.Title.Inverse"
+                    style="@style/Exercicio06Theme.TextAppearance.Title.Inverse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -58,13 +58,13 @@
 
             <TextView
                 android:id="@+id/sample_body"
-                style="@style/MaterialAnimations.Text.Body"
+                style="@style/Exercicio06Theme.Text.Body"
                 android:text="Sample Activity demonstrating how to create different CirculaReveal animations" />
 
 
             <ImageView
                 android:id="@+id/square_green"
-                style="@style/MaterialAnimations.Icon.Medium.Scaled"
+                style="@style/Exercicio06Theme.Icon.Medium.Scaled"
                 android:layout_alignParentBottom="true"
                 android:src="@drawable/circle_24dp"
                 android:tint="@color/sample_green" />
@@ -72,7 +72,7 @@
             <ImageView
                 android:id="@+id/square_red"
                 android:layout_toRightOf="@id/square_green"
-                style="@style/MaterialAnimations.Icon.Medium.Scaled"
+                style="@style/Exercicio06Theme.Icon.Medium.Scaled"
                 android:layout_alignParentBottom="true"
                 android:src="@drawable/circle_24dp"
                 android:tint="@color/sample_red" />
@@ -80,7 +80,7 @@
             <ImageView
                 android:id="@+id/square_blue"
                 android:layout_toRightOf="@id/square_red"
-                style="@style/MaterialAnimations.Icon.Medium.Scaled"
+                style="@style/Exercicio06Theme.Icon.Medium.Scaled"
                 android:layout_alignParentBottom="true"
                 android:src="@drawable/circle_24dp"
                 android:tint="@color/sample_blue" />
@@ -88,7 +88,7 @@
             <ImageView
                 android:id="@+id/square_yellow"
                 android:layout_toRightOf="@id/square_blue"
-                style="@style/MaterialAnimations.Icon.Medium.Scaled"
+                style="@style/Exercicio06Theme.Icon.Medium.Scaled"
                 android:layout_alignParentBottom="true"
                 android:src="@drawable/circle_24dp"
                 android:tint="@color/sample_yellow" />
