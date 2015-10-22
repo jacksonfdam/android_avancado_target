@@ -15,10 +15,9 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 
-public class BirthProvider extends ContentProvider {
-	 // fields for my content provider
-	 static final String PROVIDER_NAME = "br.com.targettrust.exercicio11.provider.BirthdayProv";
-	 static final String URL = "content://" + PROVIDER_NAME + "/friends";
+public class LembreteProvider extends ContentProvider {
+	 static final String PROVIDER_NAME = "br.com.targettrust.exercicio11.provider.LembreteProv";
+	 static final String URL = "content://" + PROVIDER_NAME + "/amigos";
 	 static final Uri CONTENT_URI = Uri.parse(URL);
 	   
 	 // fields for the database
@@ -33,20 +32,20 @@ public class BirthProvider extends ContentProvider {
 	 DBHelper dbHelper;
 	   
 	 // projection map for a query
-	 private static HashMap<String, String> BirthMap;
+	 private static HashMap<String, String> LembreteMap;
 	 
 	 // maps content URI "patterns" to the integer values that were set above
 	 static final UriMatcher uriMatcher;
 	   static{
 	      uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-	      uriMatcher.addURI(PROVIDER_NAME, "friends", FRIENDS);
-	      uriMatcher.addURI(PROVIDER_NAME, "friends/#", FRIENDS_ID);
+	      uriMatcher.addURI(PROVIDER_NAME, "amigos", FRIENDS);
+	      uriMatcher.addURI(PROVIDER_NAME, "amigos/#", FRIENDS_ID);
 	   }
 	   
 	   // database declarations
 	   private SQLiteDatabase database;
-	   static final String DATABASE_NAME = "BirthdayReminder";
-	   static final String TABLE_NAME = "birthTable";
+	   static final String DATABASE_NAME = "lembretes";
+	   static final String TABLE_NAME = "amigos";
 	   static final int DATABASE_VERSION = 1;
 	   static final String CREATE_TABLE = 
 	      " CREATE TABLE " + TABLE_NAME +
@@ -106,7 +105,7 @@ public class BirthProvider extends ContentProvider {
 	      switch (uriMatcher.match(uri)) {
 	      // maps all database column names
 	      case FRIENDS:
-	    	  queryBuilder.setProjectionMap(BirthMap);
+	    	  queryBuilder.setProjectionMap(LembreteMap);
 	         break;
 	      case FRIENDS_ID:
 	    	  queryBuilder.appendWhere( ID + "=" + uri.getLastPathSegment());
@@ -197,10 +196,10 @@ public class BirthProvider extends ContentProvider {
 		switch (uriMatcher.match(uri)){
 	      // Get all friend-birthday records 
 	      case FRIENDS:
-	         return "vnd.android.cursor.dir/vnd.example.friends";
+	         return "vnd.android.cursor.dir/vnd.example.amigos";
 	      // Get a particular friend 
 	      case FRIENDS_ID:
-	         return "vnd.android.cursor.item/vnd.example.friends";
+	         return "vnd.android.cursor.item/vnd.example.amigos";
 	      default:
 	         throw new IllegalArgumentException("Unsupported URI: " + uri);
 	      }

@@ -28,11 +28,11 @@ public class MainActivity extends Activity {
 
 	public void deleteAllBirthdays (View view) {
 		// delete all the records and the table of the database provider
-		String URL = "content://br.com.targettrust.exercicio11.provider.BirthdayProv/friends";
+		String URL = "content://br.com.targettrust.exercicio11.provider.LembreteProv/friends";
 	    Uri friends = Uri.parse(URL);
 		int count = getContentResolver().delete(
 				 friends, null, null);
-		String countNum = "Javacodegeeks: "+ count +" records are deleted.";
+		String countNum = "LembreteProvider: Foram  deletados : "+ count +".";
 		Toast.makeText(getBaseContext(), 
 			      countNum, Toast.LENGTH_LONG).show();
 		
@@ -42,34 +42,34 @@ public class MainActivity extends Activity {
 	      // Add a new birthday record
 	      ContentValues values = new ContentValues();
 
-	      values.put(BirthProvider.NAME, 
+	      values.put(LembreteProvider.NAME,
 	      ((EditText)findViewById(R.id.name)).getText().toString());
 	      
-	      values.put(BirthProvider.BIRTHDAY, 
+	      values.put(LembreteProvider.BIRTHDAY,
 	      ((EditText)findViewById(R.id.birthday)).getText().toString());
 
 	      Uri uri = getContentResolver().insert(
-	    	BirthProvider.CONTENT_URI, values);
+	    	LembreteProvider.CONTENT_URI, values);
 	      
 	      Toast.makeText(getBaseContext(), 
-	    	"Javacodegeeks: " + uri.toString() + " inserted!", Toast.LENGTH_LONG).show();
+	    	"LembreteProvider: " + uri.toString() + " inserted!", Toast.LENGTH_LONG).show();
 	   }
 
 
 	   public void showAllBirthdays(View view) {
 	      // Show all the birthdays sorted by friend's name
-	      String URL = "content://br.com.targettrust.exercicio11.provider.BirthdayProv/friends";
+	      String URL = "content://br.com.targettrust.exercicio11.provider.LembreteProv/amigos";
 	      Uri friends = Uri.parse(URL);
 	      Cursor c = getContentResolver().query(friends, null, null, null, "name");
-	      String result = "Javacodegeeks Results:";
+	      String result = "LembreteProvider Results:";
 	      
 	      if (!c.moveToFirst()) {
 	    	  Toast.makeText(this, result+" no content yet!", Toast.LENGTH_LONG).show();
 	      }else{
 	    	  do{
-	            result = result + "\n" + c.getString(c.getColumnIndex(BirthProvider.NAME)) + 
-	    	            " with id " +  c.getString(c.getColumnIndex(BirthProvider.ID)) + 
-	    	            " has birthday: " + c.getString(c.getColumnIndex(BirthProvider.BIRTHDAY));
+	            result = result + "\n" + c.getString(c.getColumnIndex(LembreteProvider.NAME)) +
+	    	            " with id " +  c.getString(c.getColumnIndex(LembreteProvider.ID)) +
+	    	            " has birthday: " + c.getString(c.getColumnIndex(LembreteProvider.BIRTHDAY));
 	          } while (c.moveToNext());
 	    	  Toast.makeText(this, result, Toast.LENGTH_LONG).show();
 	      }
