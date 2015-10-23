@@ -1,3 +1,6 @@
+
+![Targettrust](http://www.targettrust.com.br/img/header-logo_v2.png)
+
 # Curso de Android Avançado - Desenvolvimento Mobile
 
 1. Explorando a action bar e o uso de menus
