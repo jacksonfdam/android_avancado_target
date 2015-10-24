@@ -1,24 +1,38 @@
 package br.com.targettrust.exercicio10;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.CursorLoader;
+import android.support.v4.content.Loader;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends ActionBarActivity implements DownloadResultReceiver.Receiver {
+import br.com.targettrust.exercicio10.model.Filme;
+
+
+public class MainActivity extends ActionBarActivity implements DownloadResultReceiver.Receiver, LoaderManager.LoaderCallbacks<Cursor> {
 
     private ListView listView = null;
 
-    private ArrayAdapter arrayAdapter = null;
+    private FilmeAdapter filmeAdapter = null;
 
     private DownloadResultReceiver mReceiver;
 
@@ -48,6 +62,9 @@ public class MainActivity extends ActionBarActivity implements DownloadResultRec
         /* Initialize listView */
         listView = (ListView) findViewById(R.id.listView);
 
+        /** Creating a loader for populating listview from sqlite database */
+        /** This statement, invokes the method onCreatedLoader() */
+
         /* Starting Download Service */
         mReceiver = new DownloadResultReceiver(new Handler());
         mReceiver.setReceiver(this);
@@ -59,6 +76,15 @@ public class MainActivity extends ActionBarActivity implements DownloadResultRec
         intent.putExtra("requestId", 101);
 
         startService(intent);
+
+
+          /* Update ListView with result */
+        String URL = "content://br.com.targettrust.exercicio10/filmes";
+        Uri friends = Uri.parse(URL);
+        Cursor filmeCursor = getContentResolver().query(friends, null, null, null, "titulo");
+        filmeAdapter = new FilmeAdapter(this, filmeCursor,0);
+        listView.setAdapter(filmeAdapter);
+        //getSupportLoaderManager().initLoader(0, null, this);
     }
 
     @Override
@@ -86,6 +112,7 @@ public class MainActivity extends ActionBarActivity implements DownloadResultRec
     @Override
     public void onReceiveResult(int resultCode, Bundle resultData) {
         switch (resultCode) {
+
             case DownloadService.STATUS_RUNNING:
 
                 setProgressBarIndeterminateVisibility(true);
@@ -94,11 +121,26 @@ public class MainActivity extends ActionBarActivity implements DownloadResultRec
                 /* Hide progress & extract result from bundle */
                 setProgressBarIndeterminateVisibility(false);
 
-                String[] results = resultData.getStringArray("result");
+                Log.v("MainActivity", "resultCode: STATUS_FINISHED");
+                ArrayList<Filme> results = (ArrayList<Filme>) resultData.getSerializable("results");
 
-                /* Update ListView with result */
-                arrayAdapter = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, results);
-                listView.setAdapter(arrayAdapter);
+                if (null != results && results.size() > 0) {
+                    //bundle.putStringArray("", results);
+                    Log.v("MainActivity", "Size: " + results.size());
+
+
+                    for (int x = 0; x < results.size(); x++){
+                        // Add a new birthday record
+                        ContentValues values = new ContentValues();
+                        Filme f = results.get(x);
+
+                        values.put(FilmeProvider.TITULO,f.titulo);
+                        values.put(FilmeProvider.CAPA,f.imagem);
+
+                        Uri uri = getContentResolver().insert(FilmeProvider.CONTENT_URI, values);
+                    }
+                }
+
 
                 break;
             case DownloadService.STATUS_ERROR:
@@ -107,5 +149,23 @@ public class MainActivity extends ActionBarActivity implements DownloadResultRec
                 Toast.makeText(this, error, Toast.LENGTH_LONG).show();
                 break;
         }
+    }
+
+    /** A callback method invoked by the loader when initLoader() is called */
+    @Override
+    public Loader<Cursor> onCreateLoader(int arg0, Bundle arg1) {
+        Uri uri = FilmeProvider.CONTENT_URI;
+        return new CursorLoader(this, uri, null, null, null, null);
+    }
+
+    /** A callback method, invoked after the requested content provider returned all the data */
+    @Override
+    public void onLoadFinished(Loader<Cursor> arg0, Cursor arg1) {
+        filmeAdapter.swapCursor(arg1);
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> arg0) {
+        filmeAdapter.swapCursor(null);
     }
 }

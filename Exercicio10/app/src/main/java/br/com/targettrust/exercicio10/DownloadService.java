@@ -20,6 +20,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.targettrust.exercicio10.model.Filme;
 
 public class DownloadService extends IntentService {
 
@@ -48,11 +52,13 @@ public class DownloadService extends IntentService {
             receiver.send(STATUS_RUNNING, Bundle.EMPTY);
 
             try {
-                String[] results = downloadData(url);
+                ArrayList<Filme> results = downloadData(url);
 
                 /* Sending result back to activity */
-                if (null != results && results.length > 0) {
-                    bundle.putStringArray("result", results);
+                if (null != results && results.size() > 0) {
+                    //bundle.putStringArray("results", results);
+                    Log.v("Service","Size: " + results.size());
+                    bundle.putSerializable("results", results);
                     receiver.send(STATUS_FINISHED, bundle);
                 }
             } catch (Exception e) {
@@ -66,7 +72,7 @@ public class DownloadService extends IntentService {
         this.stopSelf();
     }
 
-    private String[] downloadData(String requestUrl) throws IOException, DownloadException {
+    private ArrayList<Filme> downloadData(String requestUrl) throws IOException, DownloadException {
         InputStream inputStream = null;
 
         HttpURLConnection urlConnection = null;
@@ -93,9 +99,9 @@ public class DownloadService extends IntentService {
 
             String response = convertInputStreamToString(inputStream);
 
-            String[] results = parseResult(response);
+            ArrayList<Filme> filmes = parseResult(response);
 
-            return results;
+            return filmes;
         } else {
             throw new DownloadException("Failed to fetch data!!");
         }
@@ -119,28 +125,28 @@ public class DownloadService extends IntentService {
         return result;
     }
 
-    private String[] parseResult(String result) {
+    private ArrayList<Filme> parseResult(String result) {
 
-        String[] movieTitles = null;
+        ArrayList<Filme> filmes = new ArrayList<Filme>();
         try {
             JSONObject response = new JSONObject(result);
 
             JSONArray posts = response.optJSONArray("results");
 
-            movieTitles = new String[posts.length()];
-
             for (int i = 0; i < posts.length(); i++) {
                 JSONObject post = posts.optJSONObject(i);
                 String title = post.optString("title");
-
-                movieTitles[i] = title;
+                Filme film = new Filme(post.optString("id"),
+                        post.optString("title"),
+                        "https://image.tmdb.org/t/p/w370" + post.optString("poster_path"));
+                filmes.add(film);
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        return movieTitles;
+        return filmes;
     }
 
     public class DownloadException extends Exception {

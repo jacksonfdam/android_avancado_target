@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.targettrust.exercicio10" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -25,13 +24,19 @@
             android:authorities="br.com.targettrust.exercicio10.MovieContentProvider"
             android:enabled="true"
             android:exported="true" >
-
         </provider>
 
         <!-- Declaring Service in Manifest -->
         <service
             android:name=".DownloadService"
             android:exported="false" />
+
+        <provider
+            android:name=".FilmeProvider"
+            android:authorities="br.com.targettrust.exercicio10"
+            android:enabled="true"
+            android:exported="true" >
+        </provider>
     </application>
 
 </manifest>
