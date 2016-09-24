@@ -1,10 +1,12 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.android.databinding'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
+    dataBinding {
+        enabled = true
+    }
     defaultConfig {
         applicationId "br.com.targettrust.exercicio06"
         minSdkVersion 15
